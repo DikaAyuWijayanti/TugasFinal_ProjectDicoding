@@ -7,12 +7,23 @@ class MovieList extends StatefulWidget{
 }
 
 class _MovieListState extends State<MovieList> {
-  String result = "";
+  int moviesCount;
+  List movies;
   HttpService service;
+
+  Future initialize() async{
+    movies = [];
+    movies = await service.getPopularMovies();
+    setState((){
+      moviesCount = movies.length;
+      movies = movies;
+    });
+  }
   
   @override
   void initState(){
     service = HttpService();
+    initialize();
     super.initState();
   }
   Widget build(BuildContext context){
