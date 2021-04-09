@@ -27,16 +27,21 @@ class _MovieListState extends State<MovieList> {
     super.initState();
   }
   Widget build(BuildContext context){
-    service.getPopularMovies().then((value) =>{
-      setState((){
-        result = value;
-      })
-    });
     return Scaffold(
-      appBar: AppBar(title: Text("Popular Movies"),
+      appBar: AppBar(
+        title: Text("Popular Movies"),
       ),
-      body: Container(
-      child: Text(result),
+      body: ListView.builder(
+        itemCount: (this.moviesCount == null) ? 0 : this.moviesCount,
+        itemBuilder: (context, int position){
+          return Card(color: Colors.white,
+          elevation: 2.0,
+          child: ListTile(title: Text(movies[position].title),
+          subtitle: Text('Rating = ' + movies[position].voteAverage.toString(),
+          ),
+          ),
+          );
+        },
       ),
     );
   }
