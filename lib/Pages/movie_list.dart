@@ -16,6 +16,17 @@ class _MovieListState extends State<MovieList> {
     super.initState();
   }
   Widget build(BuildContext context){
-    return Container();
+    service.getPopularMovies().then((value) =>{
+      setState((){
+        result = value;
+      })
+    });
+    return Scaffold(
+      appBar: AppBar(title: Text("Popular Movies"),
+      ),
+      body: Container(
+      child: Text(result),
+      ),
+    );
   }
 }
