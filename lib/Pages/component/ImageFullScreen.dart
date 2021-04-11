@@ -25,7 +25,8 @@ class ImageFullScreen extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: EdgeInsets.only(left: 16, right: 16),
-            child: Hero(
+            child: Hero( // digunakan untuk sebagai Hero Animation dimana Animasi yang digunakan untuk menampilkan transisi sebuah widget di dalam UI ketika berpindah halaman.
+                      //atau menambahkan animasi pada widget ketika berpindah halaman seakan-akan widget tersebut dipindah dari satu halaman ke halaman lainnya
               tag: 'imageHero',
               child: Image.network(
                 path,
