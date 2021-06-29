@@ -24,8 +24,7 @@ class ItemPage extends StatelessWidget{
               Navigator.pop(context);
             }),
             backgroundColor: Colors.cyanAccent,
-            title: Text("FAMOUS MOVIES", style: TextStyle(fontSize: 20, 
-            color: Colors.black),),
+            title: Text("FAMOUS MOVIES", style: TextStyle(fontSize: 20, color: Colors.black),),
             ),
         body: Container(
             alignment: Alignment.center,
