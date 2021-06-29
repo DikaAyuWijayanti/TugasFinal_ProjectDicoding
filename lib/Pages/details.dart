@@ -11,7 +11,7 @@ class Details extends StatelessWidget {
     harga   : ' Rp 30000',
     image   : 'https://cdn0-production-images-kly.akamaized.net/sQw5tZ3b62ctXfIlfBCPuWDWaqs=/640x853/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3357282/original/011806600_1611383440-EsRUFLjU0AEggnI-700x1037.jpeg',
   ),
- Item(
+    Item(
     title    : ' Raya and the Last Dragon',
     released : ' 2002',
     harga    : ' Rp 40000',
