@@ -30,35 +30,44 @@ class _MovieListState extends State<MovieList> {
     initialize();
     super.initState();
   }
-  Widget build(BuildContext context){
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.indigo[50],
       appBar: AppBar(
-        title: Text("Popular Movies"),
+        elevation: .5,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
+        title: Text("FAMOUS MOVIES"),
       ),
-      body: ListView.builder(
-        itemCount: (this.moviesCount == null) ? 0 : this.moviesCount,
-        itemBuilder: (
-          context, int position){
-          return Card(
-            color: Colors.white,
-          elevation: 2.0,
-          child: 
-          ListTile(
-            leading: Image.network(imgPath+movies[position].posterPath),
-            title: Text(movies[position].title),
-          subtitle: Text('Rating = ' + movies[position].voteAverage.toString(),
+      body: GridView.builder(
+          itemCount: (this.moviesCount == null) ? 0 : this.moviesCount,
+          padding: const EdgeInsets.all(20),
+         
+          gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            childAspectRatio: 2 / 3,
+            mainAxisSpacing: 10.0,
+            crossAxisSpacing: 20.0,
           ),
-          onTap: (){ //Untuk membuat perpindahan dari movie list ke movie detail
-            MaterialPageRoute route = 
-            MaterialPageRoute(
-              builder: (_) => MovieDetail(movies[position]),
-              );
-            Navigator.push(context, route);
-          },
-          ),
-          );
-        },
-      ),
+          itemBuilder: (context, int position) {
+            return GridTile(
+              child: InkResponse(
+                enableFeedback: true,
+                child: Image.network(
+                  imgPath + movies[position].posterPath,
+                  fit: BoxFit.cover,
+                ),
+                onTap: () {
+                  MaterialPageRoute route = MaterialPageRoute(
+                      builder: (_) => MovieDetail(movies[position]));
+                  Navigator.push(context, route);
+                },
+              ),
+            );
+          }),
     );
   }
 }
