@@ -40,7 +40,8 @@ class _MovieListState extends State<MovieList> {
           icon: Icon(Icons.menu),
           onPressed: () {},
         ),
-        title: Text("FAMOUS MOVIES"),
+        title: Text(
+          "FAMOUS MOVIES"),
       ),
       body: GridView.builder(
           itemCount: (this.moviesCount == null) ? 0 : this.moviesCount,

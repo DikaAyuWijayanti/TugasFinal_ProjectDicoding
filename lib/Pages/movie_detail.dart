@@ -129,7 +129,8 @@ class MovieDetail extends StatelessWidget{
             Container(
               child: Text(
                 'Overview',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20, 
+                fontWeight: FontWeight.bold),
                 
               ),
               padding: EdgeInsets.all(16),
