@@ -5,7 +5,7 @@ import 'package:praktikum_7/models/item.dart';
 class Details extends StatelessWidget {
   
   final List<Item> items = [
-       Item(
+    Item(
     title   : ' Godzila  Vs.Kong',
     released: ' 2001',
     harga   : ' Rp 30000',

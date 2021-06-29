@@ -26,7 +26,7 @@ class ItemPage extends StatelessWidget{
             backgroundColor: Colors.cyanAccent,
             title: Text("FAMOUS MOVIES", style: TextStyle(fontSize: 20, color: Colors.black),),
             ),
-        body: Container(
+            body: Container(
             alignment: Alignment.center,
             color: Colors.blue[50],
             child:
