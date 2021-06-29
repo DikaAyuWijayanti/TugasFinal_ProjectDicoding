@@ -166,7 +166,7 @@ class Details extends StatelessWidget {
                     children: [
                       Expanded(child : Image.network(item.image)),// menampilkan menu/list gambar
                       Expanded(child: Text(item.title)),// menampilkan menu/ list product - productnya
-                      Expanded(child: Text(item.released)),// menampilkan menu/ list genre/ jenis- jenisnya
+                      Expanded(child: Text(item.released)),// menampilkan menu tahun release movie
                       Expanded(child: Text(item.harga)),
                     ]
                     ),
